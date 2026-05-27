@@ -1,0 +1,59 @@
+{
+  "liquids": [
+    "water",
+    "saltwater",
+    "acid",
+    "oil",
+    "lava",
+    "mercury",
+    "bromine",
+    "slime",
+    "mud"
+  ],
+  "gases": [
+    "empty",
+    "steam",
+    "smoke",
+    "oxygen",
+    "hydrogen",
+    "methane",
+    "carbon_dioxide",
+    "chlorine",
+    "nitrogen",
+    "propane"
+  ],
+  "powders": [
+    "sand",
+    "dirt",
+    "salt",
+    "snow",
+    "ash",
+    "dust",
+    "powder_metal",
+    "clay"
+  ],
+  "solids": [
+    "stone",
+    "iron",
+    "wood",
+    "gold",
+    "copper",
+    "glass",
+    "ice",
+    "charcoal",
+    "rock",
+    "plant",
+    "leaf"
+  ],
+  "walls": [
+    "wall",
+    "concrete",
+    "earth"
+  ],
+  "special": [
+    "fire",
+    "electricity",
+    "explosive",
+    "seed"
+  ]
+}
