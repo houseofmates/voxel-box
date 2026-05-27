@@ -1,14 +1,14 @@
 # Sandboxels to Voxel-Box Material Conversion Prompt for Gemini 3 Flash (via Google Jules)
 
-You are tasked with implementing a complete Sandboxels-inspired material system for the Voxel-Box project, which will be integrated into the Sensory/voxulation project. You do NOT have access to the Sandboxels repository - all information must come from this prompt.
+You are tasked with implementing a complete Sandboxels-inspired material system for the Voxel-Box project, which will be integrated into the Voxel-Box/Voxel-Box project. You do NOT have access to the Sandboxels repository - all information must come from this prompt.
 
 ## PROJECT OVERVIEW
-Voxel-Box is a voxel-based falling-sand particle simulation designed as a material library for integration into Sensory/voxulation. It aims to replicate Sandboxels' material definitions and interactions while adapting to Sensory's existing systems.
+Voxel-Box is a voxel-based falling-sand particle simulation designed as a material library for integration into Voxel-Box/Voxel-Box. It aims to replicate Sandboxels' material definitions and interactions while adapting to Voxel-Box's existing systems.
 
 ## CORE REQUIREMENTS
 
 ### 1. MATERIAL STATE SYSTEM
-Voxel-Box uses Sensory's material state numbering:
+Voxel-Box uses Voxel-Box's material state numbering:
 - 0 = solid
 - 1 = liquid  
 - 2 = gas
@@ -33,7 +33,7 @@ All materials must be defined in this format for `materials.jsx`:
   ignitePoint: number (celsius),
   baseTemp: number (starting temperature),
   explosionResistant: boolean,
-  // Sensory-specific:
+  // Voxel-Box-specific:
   sandbucketMovable: boolean,
   reactionProduct: object // maps to reaction results
 }
@@ -49,7 +49,7 @@ Organize materials into these categories:
 - special
 
 ### 4. MOVEMENT/BEHAVIOR ADAPTATIONS
-Adapt Sandboxels behaviors to Sensory's `move()` function in `engine.jsx`:
+Adapt Sandboxels behaviors to Voxel-Box's `move()` function in `engine.jsx`:
 
 **LIQUIDS (state=1)**:
 - Try to fall down if empty below
@@ -90,7 +90,7 @@ Adapt Sandboxels behaviors to Sensory's `move()` function in `engine.jsx`:
 - Follows path of least resistance
 
 ### 5. REACTION SYSTEM
-Convert Sandboxels reactions to Sensory's `neighborReactions()` function:
+Convert Sandboxels reactions to Voxel-Box's `neighborReactions()` function:
 
 **Sandboxels reaction format**:
 ```javascript
@@ -145,7 +145,7 @@ Handle these Sandboxels-specific properties:
 - If too complex, note as "requires special implementation"
 
 ### 7. TEMPERATURE SYSTEM
-Voxel-Box uses Sensory's temperature system:
+Voxel-Box uses Voxel-Box's temperature system:
 - Each material has baseTemp
 - Materials exchange heat with neighbors based on thermalConductivity
 - State changes occur at meltPoint/boilPoint/ignitePoint
@@ -266,7 +266,7 @@ if ((mat === MAT.ACID && nmat === MAT.METAL) ||
 Create these files in the voxel-box repository:
 
 **`materials.jsx`** - Complete material definitions for ALL Sandboxels elements
-**`behavior_guidelines.md`** - Detailed notes on adapting each behavior type to Sensory's move() function  
+**`behavior_guidelines.md`** - Detailed notes on adapting each behavior type to Voxel-Box's move() function
 **`reaction_rules.md`** - Comprehensive list of reaction conversions for neighborReactions()
 **`special_properties.md`** - How to handle stain, burnInto, fireColor, hidden, conduct, etc.
 **`temperature_guide.md`** - Notes on melt/boil/ignite points and thermal properties
@@ -276,19 +276,19 @@ Create these files in the voxel-box repository:
 ### 11. QUALITY REQUIREMENTS
 - Aim for completeness: convert as many Sandboxels elements as reasonable
 - Maintain accuracy: preserve Sandboxels' intended behaviors and reactions where possible
-- Ensure compatibility: all definitions must work with Sensory's existing systems
+- Ensure compatibility: all definitions must work with Voxel-Box's existing systems
 - Document assumptions: when Sandboxels behavior can't be directly adapted, explain the approach
 - Prioritize stability: avoid definitions that would cause crashes or infinite loops
 - Include testing guidance: suggest which elements to test first for basic functionality
 
 ### 12. GETTING STARTED
 Begin by creating the basic framework:
-1. Set up the MAT constants (you'll need to define these based on Sensory's existing system)
+1. Set up the MAT constants (you'll need to define these based on Voxel-Box's existing system)
 2. Create material definitions for core elements: water, sand, stone, fire
 3. Implement basic movement for liquids and powders
 4. Add simple reaction rules (e.g., acid + metal)
 5. Then expand to the full library
 
-Remember: Your output will be used by someone who cannot see the Sandboxels repo, so your documentation must be complete and self-contained. Focus on creating clear, actionable material definitions and conversion guidelines that can be implemented directly into the Voxel-Box/Sensory system.
+Remember: Your output will be used by someone who cannot see the Sandboxels repo, so your documentation must be complete and self-contained. Focus on creating clear, actionable material definitions and conversion guidelines that can be implemented directly into the Voxel-Box/Voxel-Box system.
 
 Start by creating the repository structure and basic files, then work toward the complete material library.
