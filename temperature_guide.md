@@ -46,12 +46,19 @@ function updateTemperature(x, y) {
   }
 
   // 2. State transitions
-  if (temp >= mat.boilPoint && mat.state !== 2) {
+  // Heating transitions
+  if (temp >= mat.ignitePoint && mat.flammable) {
+    set(x, y, MAT.FIRE);
+  } else if (temp >= mat.boilPoint && mat.state !== 2) {
     set(x, y, getGasForm(mat));
   } else if (temp >= mat.meltPoint && (mat.state === 0 || mat.state === 3)) {
     set(x, y, getLiquidForm(mat));
-  } else if (temp >= mat.ignitePoint && mat.flammable) {
-    set(x, y, MAT.FIRE);
+  }
+  // Cooling transitions
+  else if (temp < mat.meltPoint && mat.state === 1) {
+    set(x, y, getSolidForm(mat));
+  } else if (temp < mat.boilPoint && mat.state === 2) {
+    set(x, y, getLiquidForm(mat));
   }
 }
 ```
