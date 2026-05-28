@@ -52,6 +52,49 @@ export const MAT = {
   CLAY: 47,
   MUD: 48,
   SLIME: 49,
+  SUGAR_WATER: 50,
+  ALCOHOL: 51,
+  SELTZER: 52,
+  BLOOD: 53,
+  GLUE: 54,
+  MILK: 55,
+  HONEY: 56,
+  POISON_GAS: 57,
+  RAD_STEAM: 58,
+  SUGAR: 59,
+  FLOUR: 60,
+  GUNPOWDER: 61,
+  CONCRETE_POWDER: 62,
+  SLAG: 63,
+  SULFUR: 64,
+  DRY_ICE: 65,
+  WAX: 66,
+  PLASTIC: 67,
+  STEEL: 68,
+  DIAMOND: 69,
+  BRICK: 70,
+  FENCE: 71,
+  PORCELAIN: 72,
+  PLASMA: 73,
+  COLD_FIRE: 74,
+  ANTIMATTER: 75,
+  VOID: 76,
+  VIRUS: 77,
+  CANCER: 78,
+  GRASS: 79,
+  TREE_BRANCH: 80,
+  ALGAE: 81,
+  MUSHROOM: 82,
+  MEAT: 83,
+  BONE: 84,
+  TNT: 85,
+  C4: 86,
+  NITROGLYCERIN: 87,
+  THERMITE: 88,
+  CLF3: 89,
+  NEUTRON: 90,
+  PROTON: 91,
+  ELECTRON: 92,
 };
 
 export const MATERIALS = {
@@ -886,5 +929,720 @@ Object.assign(MATERIALS, {
     baseTemp: 20,
     explosionResistant: false,
     sandbucketMovable: true
+  }
+});
+
+// Additional Liquids
+Object.assign(MATERIALS, {
+  [MAT.SUGAR_WATER]: {
+    name: 'sugar_water',
+    color: '#a0d8f1',
+    state: 1, // liquid
+    density: 1050,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.1,
+    flammable: false,
+    meltPoint: -2,
+    boilPoint: 105,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.ALCOHOL]: {
+    name: 'alcohol',
+    color: '#e0e0ff',
+    state: 1, // liquid
+    density: 789,
+    stain: 0,
+    thermalConductivity: 0.17,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: -114,
+    boilPoint: 78,
+    ignitePoint: 365,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.SELTZER]: {
+    name: 'seltzer',
+    color: '#d0f0ff',
+    state: 1, // liquid
+    density: 1000,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.1,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.BLOOD]: {
+    name: 'blood',
+    color: '#8a0303',
+    state: 1, // liquid
+    density: 1060,
+    stain: 0.1,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.3,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 37,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.GLUE]: {
+    name: 'glue',
+    color: '#f0f0f0',
+    state: 1, // liquid
+    density: 1100,
+    stain: 0.2,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.MILK]: {
+    name: 'milk',
+    color: '#f5f5f5',
+    state: 1, // liquid
+    density: 1030,
+    stain: 0.05,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.2,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.HONEY]: {
+    name: 'honey',
+    color: '#d4af37',
+    state: 1, // liquid
+    density: 1420,
+    stain: 0.1,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 15,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  }
+});
+
+// Additional Gases
+Object.assign(MATERIALS, {
+  [MAT.POISON_GAS]: {
+    name: 'poison_gas',
+    color: '#9b59b6',
+    state: 2, // gas
+    density: 1.5,
+    stain: 0.05,
+    thermalConductivity: 0.02,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: -100,
+    boilPoint: -50,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.RAD_STEAM]: {
+    name: 'rad_steam',
+    color: '#bfff00',
+    state: 2, // gas
+    density: 0.6,
+    stain: 0.2,
+    thermalConductivity: 0.03,
+    electricalConductivity: 0.1,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 100,
+    explosionResistant: true,
+    sandbucketMovable: false
+  }
+});
+
+// Additional Powders
+Object.assign(MATERIALS, {
+  [MAT.SUGAR]: {
+    name: 'sugar',
+    color: '#ffffff',
+    state: 3, // powder
+    density: 1590,
+    stain: 0,
+    thermalConductivity: 0.2,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 186,
+    boilPoint: 99999,
+    ignitePoint: 350,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.FLOUR]: {
+    name: 'flour',
+    color: '#f5f5dc',
+    state: 3, // powder
+    density: 593,
+    stain: 0.02,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 400,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.GUNPOWDER]: {
+    name: 'gunpowder',
+    color: '#2c3e50',
+    state: 3, // powder
+    density: 960,
+    stain: 0.05,
+    thermalConductivity: 0.2,
+    electricalConductivity: 0.5,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 160,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.CONCRETE_POWDER]: {
+    name: 'concrete_powder',
+    color: '#bdc3c7',
+    state: 3, // powder
+    density: 1500,
+    stain: 0,
+    thermalConductivity: 0.3,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1500,
+    boilPoint: 3000,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.SLAG]: {
+    name: 'slag',
+    color: '#34495e',
+    state: 3, // powder
+    density: 2800,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1200,
+    boilPoint: 2500,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.SULFUR]: {
+    name: 'sulfur',
+    color: '#f1c40f',
+    state: 3, // powder
+    density: 2070,
+    stain: 0.05,
+    thermalConductivity: 0.2,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 115,
+    boilPoint: 444,
+    ignitePoint: 190,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  }
+});
+
+// Additional Solids
+Object.assign(MATERIALS, {
+  [MAT.DRY_ICE]: {
+    name: 'dry_ice',
+    color: '#f0ffff',
+    state: 0, // solid
+    density: 1560,
+    stain: 0,
+    thermalConductivity: 0.05,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: -78,
+    boilPoint: -78,
+    ignitePoint: 99999,
+    baseTemp: -78,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },
+  [MAT.WAX]: {
+    name: 'wax',
+    color: '#fff8dc',
+    state: 0, // solid
+    density: 900,
+    stain: 0,
+    thermalConductivity: 0.2,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 60,
+    boilPoint: 370,
+    ignitePoint: 240,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.PLASTIC]: {
+    name: 'plastic',
+    color: '#3498db',
+    state: 0, // solid
+    density: 950,
+    stain: 0,
+    thermalConductivity: 0.15,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 150,
+    boilPoint: 400,
+    ignitePoint: 300,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.STEEL]: {
+    name: 'steel',
+    color: '#7f8c8d',
+    state: 0, // solid
+    density: 7850,
+    stain: 0,
+    thermalConductivity: 50,
+    electricalConductivity: 0.9,
+    flammable: false,
+    meltPoint: 1510,
+    boilPoint: 2730,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.DIAMOND]: {
+    name: 'diamond',
+    color: '#e0ffff',
+    state: 0, // solid
+    density: 3510,
+    stain: 0,
+    thermalConductivity: 2000,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 3550,
+    boilPoint: 4827,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.BRICK]: {
+    name: 'brick',
+    color: '#b22222',
+    state: 0, // solid
+    density: 1900,
+    stain: 0,
+    thermalConductivity: 0.6,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1200,
+    boilPoint: 2000,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.FENCE]: {
+    name: 'fence',
+    color: '#8b4513',
+    state: 0, // solid
+    density: 700,
+    stain: 0,
+    thermalConductivity: 0.15,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 250,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.PORCELAIN]: {
+    name: 'porcelain',
+    color: '#fdf5e6',
+    state: 0, // solid
+    density: 2400,
+    stain: 0,
+    thermalConductivity: 1.5,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1400,
+    boilPoint: 2500,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  }
+});
+
+// Special, Energy and Life Elements
+Object.assign(MATERIALS, {
+  [MAT.PLASMA]: {
+    name: 'plasma',
+    color: '#8e44ad',
+    state: 2, // gas (ionized)
+    density: 0.01,
+    stain: 0.1,
+    thermalConductivity: 0.5,
+    electricalConductivity: 1.0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 5000,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.COLD_FIRE]: {
+    name: 'cold_fire',
+    color: '#00ffff',
+    state: 4, // fire
+    density: 0,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: -100,
+    explosionResistant: true,
+    sandbucketMovable: false,
+    fireColor: '#00ffff'
+  },
+  [MAT.ANTIMATTER]: {
+    name: 'antimatter',
+    color: '#2e0854',
+    state: 2, // gas-like behavior
+    density: 0,
+    stain: 0.5,
+    thermalConductivity: 0,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.VOID]: {
+    name: 'void',
+    color: '#000000',
+    state: 0, // solid
+    density: 1000000,
+    stain: 0,
+    thermalConductivity: 0,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 0,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.VIRUS]: {
+    name: 'virus',
+    color: '#00ff00',
+    state: 1, // liquid-like spread
+    density: 1000,
+    stain: 0.2,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.CANCER]: {
+    name: 'cancer',
+    color: '#ff69b4',
+    state: 0, // solid-like spread
+    density: 1000,
+    stain: 0.2,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.GRASS]: {
+    name: 'grass',
+    color: '#2ecc71',
+    state: 0, // solid
+    density: 400,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false,
+    burnInto: MAT.ASH
+  },
+  [MAT.TREE_BRANCH]: {
+    name: 'tree_branch',
+    color: '#5d4037',
+    state: 0, // solid
+    density: 700,
+    stain: 0,
+    thermalConductivity: 0.15,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 250,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false,
+    burnInto: MAT.CHARCOAL
+  },
+  [MAT.ALGAE]: {
+    name: 'algae',
+    color: '#006400',
+    state: 1, // liquid-like spread
+    density: 1010,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 0,
+    boilPoint: 100,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.MUSHROOM]: {
+    name: 'mushroom',
+    color: '#f4a460',
+    state: 0, // solid
+    density: 500,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.MEAT]: {
+    name: 'meat',
+    color: '#ffb6c1',
+    state: 0, // solid
+    density: 1060,
+    stain: 0.1,
+    thermalConductivity: 0.4,
+    electricalConductivity: 0.1,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 37,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.BONE]: {
+    name: 'bone',
+    color: '#f5f5f5',
+    state: 0, // solid
+    density: 1900,
+    stain: 0,
+    thermalConductivity: 0.3,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 800,
+    baseTemp: 37,
+    explosionResistant: true,
+    sandbucketMovable: false
+  }
+});
+
+// Explosives and Advanced Reactive Elements
+Object.assign(MATERIALS, {
+  [MAT.TNT]: {
+    name: 'tnt',
+    color: '#c0392b',
+    state: 0, // solid
+    density: 1650,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 80,
+    boilPoint: 240,
+    ignitePoint: 160,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.C4]: {
+    name: 'c4',
+    color: '#ecf0f1',
+    state: 0, // solid
+    density: 1600,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0.2,
+    flammable: true,
+    meltPoint: 100,
+    boilPoint: 200,
+    ignitePoint: 230,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.NITROGLYCERIN]: {
+    name: 'nitroglycerin',
+    color: '#f1c40f',
+    state: 1, // liquid
+    density: 1600,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 13,
+    boilPoint: 50,
+    ignitePoint: 170,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.THERMITE]: {
+    name: 'thermite',
+    color: '#e67e22',
+    state: 3, // powder
+    density: 2500,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.1,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 1500,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.CLF3]: {
+    name: 'clf3',
+    color: '#90ee90',
+    state: 1, // liquid
+    density: 1800,
+    stain: 0.5,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: -76,
+    boilPoint: 12,
+    ignitePoint: -100,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.NEUTRON]: {
+    name: 'neutron',
+    color: '#bdc3c7',
+    state: 2, // gas-like
+    density: 0,
+    stain: 0.1,
+    thermalConductivity: 100,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.PROTON]: {
+    name: 'proton',
+    color: '#e74c3c',
+    state: 2, // gas-like
+    density: 0,
+    stain: 0.1,
+    thermalConductivity: 100,
+    electricalConductivity: 1.0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.ELECTRON]: {
+    name: 'electron',
+    color: '#3498db',
+    state: 2, // gas-like
+    density: 0,
+    stain: 0.1,
+    thermalConductivity: 100,
+    electricalConductivity: 1.0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
   }
 });

@@ -60,3 +60,19 @@ if ((mat === MAT.A && nmat === MAT.B) || (mat === MAT.B && nmat === MAT.A)) {
 | :--- | :--- | :--- | :--- |
 | Water + Salt | Saltwater + Saltwater | 10% | Dissolving |
 | Water + Mud | Mud + Mud | 10% | Wetting |
+
+### 7. Phase 2 Specific Interactions
+| Reactants | Products | Chance | Notes |
+| :--- | :--- | :--- | :--- |
+| Sand + Heat | Molten Glass + Empty | 10% | Melting |
+| Concrete Powder + Water | Concrete + Empty | 100% | Hardening |
+| Dirt + Water | Mud + Mud | 50% | Wetting |
+| Mud + Heat | Dirt + Steam | 10% | Drying |
+| Gunpowder + Fire | Explosion + Smoke | 100% | Ignition |
+| Thermite + Heat | Molten Iron + Slag | 100% | Intense Reaction |
+| Void + Any | Empty + Empty | 100% | Erasure |
+| Antimatter + Any | Energy + Empty | 100% | Annihilation |
+| Chlorine + Hydrogen | Explosion + Fire | 20% | Photochemical |
+| Acid + Life | Meat + Poison Gas | 20% | Dissolving |
+| Virus + Life | Virus + Virus | 10% | Infection |
+| Cancer + Life | Cancer + Cancer | 5% | Growth |
