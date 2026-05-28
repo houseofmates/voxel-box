@@ -8,7 +8,20 @@
     "mercury",
     "bromine",
     "slime",
-    "mud"
+    "mud",
+    "sugar_water",
+    "alcohol",
+    "seltzer",
+    "blood",
+    "glue",
+    "milk",
+    "honey",
+    "nitroglycerin",
+    "clf3",
+    "algae",
+    "virus",
+    "molten_glass",
+    "molten_iron"
   ],
   "gases": [
     "empty",
@@ -20,7 +33,13 @@
     "carbon_dioxide",
     "chlorine",
     "nitrogen",
-    "propane"
+    "propane",
+    "poison_gas",
+    "rad_steam",
+    "plasma",
+    "neutron",
+    "proton",
+    "electron"
   ],
   "powders": [
     "sand",
@@ -30,7 +49,15 @@
     "ash",
     "dust",
     "powder_metal",
-    "clay"
+    "clay",
+    "sugar",
+    "flour",
+    "gunpowder",
+    "concrete_powder",
+    "slag",
+    "sulfur",
+    "thermite",
+    "antimatter"
   ],
   "solids": [
     "stone",
@@ -43,7 +70,21 @@
     "charcoal",
     "rock",
     "plant",
-    "leaf"
+    "leaf",
+    "dry_ice",
+    "wax",
+    "plastic",
+    "steel",
+    "diamond",
+    "brick",
+    "fence",
+    "porcelain",
+    "grass",
+    "tree_branch",
+    "mushroom",
+    "meat",
+    "bone",
+    "cancer"
   ],
   "walls": [
     "wall",
@@ -54,6 +95,11 @@
     "fire",
     "electricity",
     "explosive",
-    "seed"
+    "seed",
+    "cold_fire",
+    "antimatter",
+    "void",
+    "tnt",
+    "c4"
   ]
 }
