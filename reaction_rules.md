@@ -24,71 +24,87 @@ if ((mat === MAT.A && nmat === MAT.B) || (mat === MAT.B && nmat === MAT.A)) {
 ### 1. Water & Extinguishing
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Water + Fire | Steam + Empty | 100% | Instant douse |
-| Water + Lava | Stone + Steam | 20% | Cooling |
-| Water + Magma | Basalt + Steam | 20% | Cooling |
+| MAT.WATER + MAT.FIRE | MAT.STEAM + MAT.EMPTY | 100% | water extinguishes fire |
+| MAT.WATER + MAT.LAVA | MAT.STONE + MAT.STEAM | 20% | lava cooling |
+| MAT.WATER + MAT.MAGMA | MAT.STONE + MAT.STEAM | 20% | magma cooling |
+| MAT.WATER + MAT.PLASMA | MAT.STEAM + MAT.EMPTY | 100% | rapid cooling/quench |
+| MAT.WATER + MAT.COLD_FIRE | MAT.ICE + MAT.EMPTY | 50% | water freezing |
 
 ### 2. Acidic Reactions (Corrosion)
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Acid + Metal | Salt + Hydrogen | 5% | Slow corrosion |
-| Acid + Stone | Sand + CO2 | 2% | Material Breakdown |
-| Acid + Wood | Ash + Smoke | 10% | Chemical burn |
+| MAT.ACID + MAT.METAL | MAT.SALT + MAT.HYDROGEN | 5% | slow corrosion of metal |
+| MAT.ACID + MAT.IRON | MAT.SALT + MAT.HYDROGEN | 5% | slow corrosion of iron |
+| MAT.ACID + MAT.STEEL | MAT.SALT + MAT.HYDROGEN | 5% | slow corrosion of steel |
+| MAT.ACID + MAT.STONE | MAT.SAND + MAT.CARBON_DIOXIDE | 2% | material breakdown |
+| MAT.ACID + MAT.WOOD | MAT.ASH + MAT.SMOKE | 10% | chemical burn |
+| MAT.ACID + MAT.PLANT | MAT.POISON_GAS + MAT.WATER | 10% | acid dissolving plant |
+| MAT.ACID + MAT.GRASS | MAT.POISON_GAS + MAT.WATER | 10% | acid dissolving grass |
+| MAT.ACID + MAT.ALGAE | MAT.POISON_GAS + MAT.WATER | 10% | acid dissolving algae |
+| MAT.ACID + MAT.MUSHROOM | MAT.POISON_GAS + MAT.WATER | 10% | acid dissolving mushroom |
+| MAT.ACID + MAT.MEAT | MAT.POISON_GAS + MAT.WATER | 10% | acid dissolving meat |
 
 ### 3. Combustion & Temperature
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Fire + Wood | Fire + Fire | 10% | Spread |
-| Fire + Oil | Fire + Fire | 50% | High spread |
-| Fire + Methane | Explosion + Fire | 100% | Gas ignition |
+| MAT.FIRE + MAT.WOOD | MAT.FIRE + MAT.FIRE | 10% | fire spread to wood |
+| MAT.FIRE + MAT.OIL | MAT.FIRE + MAT.FIRE | 50% | fire spread to oil |
+| MAT.FIRE + MAT.METHANE | MAT.EXPLOSIVE + MAT.FIRE | 100% | gas ignition (triggers explosive state) |
+| MAT.FIRE + MAT.PROPANE | MAT.EXPLOSIVE + MAT.FIRE | 100% | gas ignition |
+| MAT.FIRE + MAT.HYDROGEN | MAT.EXPLOSIVE + MAT.FIRE | 100% | gas ignition |
 
 ### 4. Electricity & Electrolysis
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Electricity + Water | Hydrogen + Oxygen | 1% | Bubbling |
-| Electricity + Saltwater | Chlorine + Hydrogen | 2% | Chemical |
+| MAT.ELECTRICITY + MAT.WATER | MAT.HYDROGEN + MAT.OXYGEN | 1% | bubbling water |
+| MAT.ELECTRICITY + MAT.SALTWATER | MAT.CHLORINE + MAT.HYDROGEN | 2% | chemical electrolysis |
+| MAT.ELECTRICITY + MAT.C4 | MAT.EXPLOSIVE + MAT.SMOKE | 100% | electronic trigger |
 
 ### 5. Biological/Growth
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Seed + Water | Plant + Water | 5% | Germination |
-| Plant + Water | Plant + Plant | 1% | Growth (spread) |
-| Plant + Fire | Fire + Smoke | 20% | Burning |
+| MAT.SEED + MAT.WATER | MAT.PLANT + MAT.WATER | 5% | germination |
+| MAT.PLANT + MAT.WATER | MAT.PLANT + MAT.PLANT | 1% | growth spread |
+| MAT.PLANT + MAT.FIRE | MAT.FIRE + MAT.SMOKE | 20% | plant burning |
+| MAT.VIRUS + MAT.PLANT | MAT.VIRUS + MAT.VIRUS | 10% | virus infection (plant) |
+| MAT.VIRUS + MAT.GRASS | MAT.VIRUS + MAT.VIRUS | 10% | virus infection (grass) |
+| MAT.VIRUS + MAT.ALGAE | MAT.VIRUS + MAT.VIRUS | 10% | virus infection (algae) |
+| MAT.VIRUS + MAT.MUSHROOM | MAT.VIRUS + MAT.VIRUS | 10% | virus infection (mushroom) |
+| MAT.VIRUS + MAT.MEAT | MAT.VIRUS + MAT.VIRUS | 10% | virus infection (meat) |
+| MAT.CANCER + MAT.PLANT | MAT.CANCER + MAT.CANCER | 5% | cancer growth (plant) |
+| MAT.CANCER + MAT.MEAT | MAT.CANCER + MAT.CANCER | 5% | cancer growth (meat) |
 
 ### 6. Mixing & Solutions
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Water + Salt | Saltwater + Saltwater | 10% | Dissolving |
-| Water + Mud | Mud + Mud | 10% | Wetting |
+| MAT.WATER + MAT.SALT | MAT.SALTWATER + MAT.SALTWATER | 10% | salt dissolving |
+| MAT.WATER + MAT.MUD | MAT.MUD + MAT.MUD | 10% | mud wetting |
+| MAT.WATER + MAT.DIRT | MAT.MUD + MAT.MUD | 50% | dirt wetting |
+| MAT.WATER + MAT.CONCRETE_POWDER | MAT.CONCRETE + MAT.EMPTY | 100% | concrete hardening |
 
-### 7. Phase 2 Specific Interactions
+### 7. Phase 2 & 3 Specific Interactions
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Sand + Heat | Molten Glass + Empty | 10% | Melting |
-| Concrete Powder + Water | Concrete + Empty | 100% | Hardening |
-| Dirt + Water | Mud + Mud | 50% | Wetting |
-| Mud + Heat | Dirt + Steam | 10% | Drying |
-| Gunpowder + Fire | Explosion + Smoke | 100% | Ignition |
-| Thermite + Heat | Molten Iron + Slag | 100% | Intense Reaction |
-| Void + Any | Empty + Empty | 100% | Erasure |
-| Antimatter + Any | Smoke + Empty | 100% | Annihilation |
-| Chlorine + Hydrogen | Explosion + Fire | 20% | Photochemical |
-| Acid + Life | Meat + Poison Gas | 20% | Dissolving |
-| Virus + Life | Virus + Virus | 10% | Infection |
-| Cancer + Life | Cancer + Cancer | 5% | Growth |
+| MAT.SAND + MAT.FIRE | MAT.MOLTEN_GLASS + MAT.EMPTY | 10% | sand melting |
+| MAT.SAND + MAT.LAVA | MAT.MOLTEN_GLASS + MAT.LAVA | 10% | sand melting |
+| MAT.SAND + MAT.MAGMA | MAT.MOLTEN_GLASS + MAT.MAGMA | 10% | sand melting |
+| MAT.SAND + MAT.PLASMA | MAT.MOLTEN_GLASS + MAT.PLASMA | 50% | ionized melting |
+| MAT.MUD + MAT.FIRE | MAT.DIRT + MAT.STEAM | 10% | mud drying |
+| MAT.MUD + MAT.LAVA | MAT.DIRT + MAT.STEAM | 10% | mud drying |
+| MAT.GUNPOWDER + MAT.FIRE | MAT.EXPLOSIVE + MAT.SMOKE | 100% | gunpowder ignition |
+| MAT.THERMITE + MAT.FIRE | MAT.MOLTEN_IRON + MAT.SLAG | 100% | intense thermite reaction |
+| MAT.THERMITE + MAT.LAVA | MAT.MOLTEN_IRON + MAT.SLAG | 100% | intense thermite reaction |
+| MAT.TNT + MAT.FIRE | MAT.EXPLOSIVE + MAT.SMOKE | 100% | tnt detonation |
+| MAT.NITROGLYCERIN + MAT.FIRE | MAT.EXPLOSIVE + MAT.FIRE | 100% | nitroglycerin ignition |
+| MAT.CHLORINE + MAT.HYDROGEN | MAT.EXPLOSIVE + MAT.FIRE | 20% | photochemical/explosive reaction |
+| MAT.SALTWATER + MAT.FIRE | MAT.SALT + MAT.STEAM | 10% | saltwater evaporation |
+| MAT.SALTWATER + MAT.LAVA | MAT.SALT + MAT.STEAM | 10% | saltwater evaporation |
+| MAT.COLD_FIRE + MAT.OIL | MAT.WAX + MAT.EMPTY | 20% | oil solidification/freezing |
 
-### 8. Part 3 Additional Interaction Chains
+### 8. Special Omni-Interactions (Universal)
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Water + Plasma | Steam + Empty | 100% | Rapid cooling/quench |
-| Water + Cold Fire | Ice + Empty | 50% | Freezing |
-| Salt Water + Heat | Salt + Steam | 10% | Evaporation |
-| Sand + Lava | Molten Glass + Lava | 10% | High heat melting |
-| Sand + Plasma | Molten Glass + Plasma | 50% | Ionized melting |
-| TNT + Fire | Explosion + Smoke | 100% | Detonation |
-| C4 + Electricity | Explosion + Smoke | 100% | Electronic trigger |
-| Nitroglycerin + Impact | Explosion + Fire | 50% | Shock sensitive |
-| Acid + Metal | Salt + Hydrogen | 5% | Corrosion |
-| Acid + Meat | Poison Gas + Water | 10% | Decomposition |
-| Acid + Plant | Poison Gas + Water | 10% | Dissolving |
-| Cold Fire + Oil | Wax + Empty | 20% | Solidification |
+| MAT.VOID + [ANY] | MAT.EMPTY + MAT.EMPTY | 100% | void erases all materials (except wall) |
+| MAT.ANTIMATTER + [ANY] | MAT.SMOKE + MAT.EMPTY | 100% | antimatter annihilates all materials |
+| MAT.PLASMA + [ANY] | MAT.PLASMA + MAT.FIRE | 5% | plasma ionizes and heats all materials |
+| MAT.CLF3 + [ANY] | MAT.FIRE + MAT.SMOKE | 100% | clf3 reacts hypergolically with all materials |
