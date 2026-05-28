@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 export default function ControlBar({ selected, onSelect, brushSize, onBrushSize, paused, onPause, fps, onClear, isMobile, sidebarOpen, setSidebarOpen }) {
   return (
-    <div className="flex flex-wrap items-center gap-3 p-4 bg-card/80 backdrop-blur-sm border-b border-border">
+    <div className="flex flex-wrap items-center gap-3 p-1 bg-card/80 backdrop-blur-sm border-b border-border">
       {/* Mobile: Sidebar toggle button */}
       {isMobile && (
         <Button
@@ -39,16 +39,16 @@ export default function ControlBar({ selected, onSelect, brushSize, onBrushSize,
       <div className="flex-1"></div>
 
       {/* FPS display */}
-      <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
+      <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
         <span>{fps}</span>
         <span className="text-muted-foreground/50">fps</span>
       </div>
 
       {/* Pause/Play button */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1">
         <button
           onClick={onPause}
-          className="p-2 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
+          className="p-1 rounded-lg bg-secondary hover:bg-secondary/80 transition-colors"
         >
           {paused ? <Play className="w-4 h-4" /> : <Pause className="w-4 h-4" />}
         </button>
@@ -56,7 +56,7 @@ export default function ControlBar({ selected, onSelect, brushSize, onBrushSize,
         {/* Clear button */}
         <button
           onClick={onClear}
-          className="p-2 rounded-lg bg-secondary hover:bg-destructive/30 transition-colors"
+          className="p-1 rounded-lg bg-secondary hover:bg-destructive/30 transition-colors"
         >
           <Trash2 className="w-4 h-4" />
         </button>

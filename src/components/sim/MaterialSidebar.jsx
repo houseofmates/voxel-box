@@ -51,7 +51,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
   return (
     <div className="flex flex-col h-full w-56 border-r border-border bg-card/80 backdrop-blur-sm font-varela">
       {/* Header */}
-      <div className="flex flex-col p-4 border-b border-border">
+      <div className="flex flex-col p-2 border-b border-border">
         <h1 className="text-sm text-muted-foreground tracking-wide">sandbox</h1>
         <div className="mt-2">
           <Input
@@ -64,7 +64,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
       </div>
 
       {/* Tabs and content */}
-      <div className="flex-1 overflow-auto p-3 lg:p-4 mt-4">
+      <div className="flex-1 overflow-auto p-3 lg:p-4 mt-0">
         <p className="text-[10px] text-muted-foreground/70 mb-2">materials</p>
         {search.trim() !== '' ? (
           // Search results view
