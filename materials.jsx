@@ -1356,7 +1356,7 @@ Object.assign(MATERIALS, {
   [MAT.ANTIMATTER]: {
     name: 'antimatter',
     color: '#2e0854',
-    state: 3, // powder-like
+    state: 0, // solid
     density: 1000000,
     stain: 0.5,
     thermalConductivity: 0,
@@ -1465,8 +1465,7 @@ Object.assign(MATERIALS, {
     ignitePoint: 99999,
     baseTemp: 20,
     explosionResistant: true,
-    sandbucketMovable: false,
-    burnInto: MAT.ASH
+    sandbucketMovable: false
   },
   [MAT.MUSHROOM]: {
     name: 'mushroom',

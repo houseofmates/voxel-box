@@ -91,6 +91,4 @@ if ((mat === MAT.A && nmat === MAT.B) || (mat === MAT.B && nmat === MAT.A)) {
 | Acid + Metal | Salt + Hydrogen | 5% | Corrosion |
 | Acid + Meat | Poison Gas + Water | 10% | Decomposition |
 | Acid + Plant | Poison Gas + Water | 10% | Dissolving |
-| Plasma + Any | Plasma + Fire | 5% | Ionization/Heating |
 | Cold Fire + Oil | Wax + Empty | 20% | Solidification |
-| CLF3 + Any | Fire + Smoke | 100% | Hypergolic reaction |
