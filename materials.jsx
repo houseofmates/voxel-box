@@ -95,6 +95,8 @@ export const MAT = {
   NEUTRON: 90,
   PROTON: 91,
   ELECTRON: 92,
+  MOLTEN_GLASS: 93,
+  MOLTEN_IRON: 94,
 };
 
 export const MATERIALS = {
@@ -1324,7 +1326,7 @@ Object.assign(MATERIALS, {
     state: 2, // gas (ionized)
     density: 0.01,
     stain: 0.1,
-    thermalConductivity: 0.5,
+    thermalConductivity: 1.0,
     electricalConductivity: 1.0,
     flammable: false,
     meltPoint: 99999,
@@ -1340,7 +1342,7 @@ Object.assign(MATERIALS, {
     state: 4, // fire
     density: 0,
     stain: 0,
-    thermalConductivity: 0.1,
+    thermalConductivity: 1.0,
     electricalConductivity: 0,
     flammable: false,
     meltPoint: 99999,
@@ -1354,8 +1356,8 @@ Object.assign(MATERIALS, {
   [MAT.ANTIMATTER]: {
     name: 'antimatter',
     color: '#2e0854',
-    state: 2, // gas-like behavior
-    density: 0,
+    state: 3, // powder-like
+    density: 1000000,
     stain: 0.5,
     thermalConductivity: 0,
     electricalConductivity: 0,
@@ -1463,7 +1465,8 @@ Object.assign(MATERIALS, {
     ignitePoint: 99999,
     baseTemp: 20,
     explosionResistant: true,
-    sandbucketMovable: false
+    sandbucketMovable: false,
+    burnInto: MAT.ASH
   },
   [MAT.MUSHROOM]: {
     name: 'mushroom',
@@ -1479,7 +1482,8 @@ Object.assign(MATERIALS, {
     ignitePoint: 200,
     baseTemp: 20,
     explosionResistant: false,
-    sandbucketMovable: true
+    sandbucketMovable: true,
+    burnInto: MAT.ASH
   },
   [MAT.MEAT]: {
     name: 'meat',
@@ -1495,7 +1499,8 @@ Object.assign(MATERIALS, {
     ignitePoint: 200,
     baseTemp: 37,
     explosionResistant: false,
-    sandbucketMovable: true
+    sandbucketMovable: true,
+    burnInto: MAT.ASH
   },
   [MAT.BONE]: {
     name: 'bone',
@@ -1531,6 +1536,7 @@ Object.assign(MATERIALS, {
     ignitePoint: 160,
     baseTemp: 20,
     explosionResistant: false,
+    explosive: true,
     sandbucketMovable: true
   },
   [MAT.C4]: {
@@ -1547,6 +1553,7 @@ Object.assign(MATERIALS, {
     ignitePoint: 230,
     baseTemp: 20,
     explosionResistant: false,
+    explosive: true,
     sandbucketMovable: true
   },
   [MAT.NITROGLYCERIN]: {
@@ -1563,6 +1570,7 @@ Object.assign(MATERIALS, {
     ignitePoint: 170,
     baseTemp: 20,
     explosionResistant: false,
+    explosive: true,
     sandbucketMovable: true
   },
   [MAT.THERMITE]: {
@@ -1590,6 +1598,7 @@ Object.assign(MATERIALS, {
     thermalConductivity: 0.1,
     electricalConductivity: 0,
     flammable: true,
+    hypergolic: true,
     meltPoint: -76,
     boilPoint: 12,
     ignitePoint: -100,
@@ -1642,6 +1651,42 @@ Object.assign(MATERIALS, {
     boilPoint: 99999,
     ignitePoint: 99999,
     baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  }
+});
+
+// Molten states for accurate transitions
+Object.assign(MATERIALS, {
+  [MAT.MOLTEN_GLASS]: {
+    name: 'molten_glass',
+    color: '#ff4500',
+    state: 1, // liquid
+    density: 2400,
+    stain: 0.1,
+    thermalConductivity: 0.8,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1500,
+    boilPoint: 2200,
+    ignitePoint: 99999,
+    baseTemp: 1600,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.MOLTEN_IRON]: {
+    name: 'molten_iron',
+    color: '#ff6600',
+    state: 1, // liquid
+    density: 7000,
+    stain: 0.1,
+    thermalConductivity: 40,
+    electricalConductivity: 0.8,
+    flammable: false,
+    meltPoint: 1538,
+    boilPoint: 2862,
+    ignitePoint: 99999,
+    baseTemp: 1600,
     explosionResistant: true,
     sandbucketMovable: false
   }

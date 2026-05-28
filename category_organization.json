@@ -19,7 +19,9 @@
     "nitroglycerin",
     "clf3",
     "algae",
-    "virus"
+    "virus",
+    "molten_glass",
+    "molten_iron"
   ],
   "gases": [
     "empty",
@@ -54,7 +56,8 @@
     "concrete_powder",
     "slag",
     "sulfur",
-    "thermite"
+    "thermite",
+    "antimatter"
   ],
   "solids": [
     "stone",

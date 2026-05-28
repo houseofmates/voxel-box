@@ -62,28 +62,35 @@ if ((mat === MAT.A && nmat === MAT.B) || (mat === MAT.B && nmat === MAT.A)) {
 | Water + Mud | Mud + Mud | 10% | Wetting |
 
 ### 7. Phase 2 Specific Interactions
-
 | Reactants | Products | Chance | Notes |
 | :--- | :--- | :--- | :--- |
-| Sand + Fire | Glass + Empty | 10% | Melting (requires heat source) |
-| Sand + Lava | Glass + Empty | 10% | Melting (high heat source) |
+| Sand + Heat | Molten Glass + Empty | 10% | Melting |
 | Concrete Powder + Water | Concrete + Empty | 100% | Hardening |
 | Dirt + Water | Mud + Mud | 50% | Wetting |
-| Mud + Fire | Dirt + Steam | 10% | Drying (requires heat source) |
-| Mud + Lava | Dirt + Steam | 10% | Drying (high heat source) |
-| Gunpowder + Fire | Explosive + Smoke | 100% | Ignition |
-| Thermite + Fire | Iron + Slag | 100% | Intense Reaction (requires heat source) |
-| Thermite + Lava | Iron + Slag | 100% | Intense Reaction (high heat source) |
-| Void + Plant | Empty + Empty | 100% | Erasure (biological) |
-| Void + Meat | Empty + Empty | 100% | Erasure (biological) |
-| Void + Grass | Empty + Empty | 100% | Erasure (biological) |
-| Antimatter + Plant | Smoke + Empty | 100% | Annihilation (biological) |
-| Antimatter + Meat | Smoke + Empty | 100% | Annihilation (biological) |
-| Antimatter + Grass | Smoke + Empty | 100% | Annihilation (biological) |
-| Chlorine + Hydrogen | Explosive + Fire | 20% | Photochemical |
-| Acid + Plant | Meat + Poison Gas | 20% | Dissolving (organic) |
-| Acid + Grass | Meat + Poison Gas | 20% | Dissolving (organic) |
-| Virus + Plant | Virus + Virus | 10% | Infection (spreads to organic) |
-| Virus + Meat | Virus + Virus | 10% | Infection (spreads to organic) |
-| Cancer + Plant | Cancer + Cancer | 5% | Growth (spreads to organic) |
-| Cancer + Meat | Cancer + Cancer | 5% | Growth (spreads to organic) |
+| Mud + Heat | Dirt + Steam | 10% | Drying |
+| Gunpowder + Fire | Explosion + Smoke | 100% | Ignition |
+| Thermite + Heat | Molten Iron + Slag | 100% | Intense Reaction |
+| Void + Any | Empty + Empty | 100% | Erasure |
+| Antimatter + Any | Smoke + Empty | 100% | Annihilation |
+| Chlorine + Hydrogen | Explosion + Fire | 20% | Photochemical |
+| Acid + Life | Meat + Poison Gas | 20% | Dissolving |
+| Virus + Life | Virus + Virus | 10% | Infection |
+| Cancer + Life | Cancer + Cancer | 5% | Growth |
+
+### 8. Part 3 Additional Interaction Chains
+| Reactants | Products | Chance | Notes |
+| :--- | :--- | :--- | :--- |
+| Water + Plasma | Steam + Empty | 100% | Rapid cooling/quench |
+| Water + Cold Fire | Ice + Empty | 50% | Freezing |
+| Salt Water + Heat | Salt + Steam | 10% | Evaporation |
+| Sand + Lava | Molten Glass + Lava | 10% | High heat melting |
+| Sand + Plasma | Molten Glass + Plasma | 50% | Ionized melting |
+| TNT + Fire | Explosion + Smoke | 100% | Detonation |
+| C4 + Electricity | Explosion + Smoke | 100% | Electronic trigger |
+| Nitroglycerin + Impact | Explosion + Fire | 50% | Shock sensitive |
+| Acid + Metal | Salt + Hydrogen | 5% | Corrosion |
+| Acid + Meat | Poison Gas + Water | 10% | Decomposition |
+| Acid + Plant | Poison Gas + Water | 10% | Dissolving |
+| Plasma + Any | Plasma + Fire | 5% | Ionization/Heating |
+| Cold Fire + Oil | Wax + Empty | 20% | Solidification |
+| CLF3 + Any | Fire + Smoke | 100% | Hypergolic reaction |
