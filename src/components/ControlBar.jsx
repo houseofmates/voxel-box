@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 
 export default function ControlBar({ selected, onSelect, brushSize, onBrushSize, paused, onPause, fps, onClear, isMobile, sidebarOpen, setSidebarOpen }) {
   return (
-    <div className="flex flex-wrap items-center gap-3 p-1 bg-card/80 backdrop-blur-sm border-b border-border">
+    <div className="flex flex-wrap items-center gap-3 p-1 bg-card/80 backdrop-blur-sm border-b border-[#f5af12]">
       {/* Mobile: Sidebar toggle button */}
       {isMobile && (
         <Button

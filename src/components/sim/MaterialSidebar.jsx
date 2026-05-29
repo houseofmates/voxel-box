@@ -49,23 +49,20 @@ export default function MaterialSidebar({ selected, onSelect }) {
   const matsToShow = getMatsToShow();
 
   return (
-    <div className="flex flex-col h-full w-56 border-r border-border bg-card/80 backdrop-blur-sm font-varela">
+    <div className="flex flex-col h-full w-56 border-r border-[#f5af12] bg-card/80 backdrop-blur-sm font-varela">
       {/* Header */}
-      <div className="flex flex-col p-2 border-b border-border">
+      <div className="flex flex-row p-0 border-b border-border items-center gap-2">
         <h1 className="text-sm text-muted-foreground tracking-wide">sandbox</h1>
-        <div className="mt-2">
-          <Input
-            placeholder="search materials..."
-            value={search}
-            onValueChange={(v) => setSearch(v)}
-            className="w-full"
-          />
-        </div>
+        <Input
+          placeholder="search materials..."
+          value={search}
+          onValueChange={(v) => setSearch(v)}
+          className="w-[120px] h-8 text-xs px-2"
+        />
       </div>
 
       {/* Tabs and content */}
-      <div className="flex-1 overflow-auto p-3 lg:p-4 mt-0">
-        <p className="text-[10px] text-muted-foreground/70 mb-2">materials</p>
+      <div className="flex-1 overflow-auto p-0">
         {search.trim() !== '' ? (
           // Search results view
           <div className="flex flex-wrap gap-2 overflow-x-auto pb-1">
@@ -97,20 +94,20 @@ export default function MaterialSidebar({ selected, onSelect }) {
         ) : (
           // Tabs view
           <Tabs defaultValue={categories[0]?.name || ''}>
-            <TabsList className="grid w-full grid-cols-2 gap-1 mb-2">
+            <TabsList className="grid w-full grid-cols-2 gap-1 mb-0">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category.name}
                   value={category.name}
-                  className="aspect-square h-10 w-full rounded-md bg-muted p-2 text-xs font-medium text-muted-foreground hover:bg-muted/80 data-[state=active]:bg-background data-[state=active]:text-foreground"
+                  className="aspect-square h-8 w-full rounded-md bg-muted p-1 text-xs font-medium text-muted-foreground hover:bg-muted/80 data-[state=active]:bg-background data-[state=active]:text-foreground"
                 >
                   {category.name}
                 </TabsTrigger>
               ))}
             </TabsList>
             {categories.map((category) => (
-              <TabsContent key={category.name} value={category.name} className="space-y-1">
-                <div className="flex flex-wrap gap-2 overflow-x-auto pb-1">
+              <TabsContent key={category.name} value={category.name} className="mt-6 space-y-1">
+                <div className="flex flex-wrap gap-2 overflow-x-auto pb-4">
                   {category.mats.map((id) => {
                     const mat = MATERIALS[id];
                     const isSelected = selected === id;
