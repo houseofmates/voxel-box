@@ -105,7 +105,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
               ))}
             </TabsList>
             {categories.map((category) => (
-              <TabsContent key={category.name} value={category.name} className="mt-12 space-y-1">
+              <TabsContent key={category.name} value={category.name} className="mt-4 space-y-1">
                 <div className="flex flex-wrap gap-2 overflow-x-auto pb-4">
                   {category.mats.map((id) => {
                     const mat = MATERIALS[id];
