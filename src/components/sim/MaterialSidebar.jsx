@@ -52,12 +52,11 @@ export default function MaterialSidebar({ selected, onSelect }) {
     <div className="flex flex-col h-full w-56 border-r border-[#f5af12] bg-card/80 backdrop-blur-sm font-varela">
       {/* Header */}
       <div className="flex flex-row p-0 border-b border-border items-center gap-2">
-        <h1 className="text-sm text-muted-foreground tracking-wide">sandbox</h1>
         <Input
           placeholder="search materials..."
           value={search}
-          onValueChange={(v) => setSearch(v)}
-          className="w-[120px] h-8 text-xs px-2"
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full h-10 text-xs px-3 focus-visible:ring-0 border-none bg-transparent"
         />
       </div>
 
@@ -94,7 +93,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
         ) : (
           // Tabs view
           <Tabs defaultValue={categories[0]?.name || ''}>
-            <TabsList className="grid w-full grid-cols-2 gap-1 mb-0">
+            <TabsList className="grid w-full grid-cols-2 gap-1 mb-0 h-auto p-1">
               {categories.map((category) => (
                 <TabsTrigger
                   key={category.name}
@@ -106,7 +105,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
               ))}
             </TabsList>
             {categories.map((category) => (
-              <TabsContent key={category.name} value={category.name} className="mt-6 space-y-1">
+              <TabsContent key={category.name} value={category.name} className="mt-4 space-y-1">
                 <div className="flex flex-wrap gap-2 overflow-x-auto pb-4">
                   {category.mats.map((id) => {
                     const mat = MATERIALS[id];

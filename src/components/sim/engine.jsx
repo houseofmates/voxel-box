@@ -518,7 +518,7 @@ export function createEngine(width, height) {
     const def = getDef(mat);
 
     // ICE → WATER
-    if (mat === MAT.ICE && t > 0) { set(x, y, MAT.WATER, t); return true; }
+    if ((mat === MAT.ICE || mat === MAT.SNOW) && t > 0) { set(x, y, MAT.WATER, t); return true; }
     // WATER → STEAM
     if (mat === MAT.WATER && t > 100) { set(x, y, MAT.STEAM, t); return true; }
     // WATER → ICE
@@ -553,7 +553,7 @@ export function createEngine(width, height) {
     // Flammable materials ignite
     if (def.flammable && t > def.ignitePoint) {
       if (mat === MAT.PLASTIC) { set(x, y, MAT.FIRE); }
-      else if (mat === MAT.WOOD || mat === MAT.LEAVES) { set(x, y, MAT.FIRE); }
+      else if (mat === MAT.WOOD || mat === MAT.LEAF || mat === MAT.LEAVES || mat === MAT.GRASS || mat === MAT.PLANT || mat === MAT.MUSHROOM) { set(x, y, MAT.FIRE); }
       else if (mat === MAT.OIL) { set(x, y, MAT.FIRE); }
       return true;
     }
@@ -579,6 +579,50 @@ export function createEngine(width, height) {
       const ni = idx(nx, ny);
       const nmat = grid[ni];
 
+
+      // IRON/STEEL rusting
+      if ((mat === MAT.IRON || mat === MAT.STEEL) && (nmat === MAT.WATER || nmat === MAT.SALTWATER)) {
+        if (rng() < 0.0001) { grid[i] = MAT.RUST; return; }
+      }
+
+      // WATER extinguishing FIRE
+      if (mat === MAT.WATER && nmat === MAT.FIRE) {
+        if (rng() < 0.2) { set(nx, ny, MAT.STEAM, 100); grid[i] = MAT.EMPTY; return; }
+      }
+
+      // PLANT Growth
+      if ((mat === MAT.PLANT || mat === MAT.GRASS || mat === MAT.ALGAE) && nmat === MAT.WATER) {
+        if (rng() < 0.01) {
+          const gx = x + (rng() < 0.5 ? 1 : -1), gy = y + (rng() < 0.5 ? 1 : -1);
+          if (inBounds(gx, gy) && (grid[idx(gx, gy)] === MAT.EMPTY || grid[idx(gx, gy)] === MAT.DIRT)) {
+            set(gx, gy, mat);
+          }
+        }
+      }
+
+      // ACID + METAL reaction
+      if (mat === MAT.ACID && MATERIALS[nmat]?.state === 0 && (nmat === MAT.IRON || nmat === MAT.COPPER || nmat === MAT.ALUMINUM)) {
+        if (rng() < 0.05) {
+          set(nx, ny, MAT.HYDROGEN);
+          if (rng() < 0.1) grid[i] = MAT.FUMES;
+          return;
+        }
+      }
+
+      // ACID + PLANT
+      if (mat === MAT.ACID && (nmat === MAT.PLANT || nmat === MAT.GRASS || nmat === MAT.LEAF || nmat === MAT.MUSHROOM)) {
+        if (rng() < 0.1) { set(nx, ny, MAT.FUMES); return; }
+      }
+
+      // LAVA + ICE
+      if (mat === MAT.LAVA && nmat === MAT.ICE) {
+        if (rng() < 0.5) { set(nx, ny, MAT.STEAM, 300); explode(nx, ny, 3); return; }
+      }
+
+      // FIRE + LEAF
+      if (mat === MAT.FIRE && nmat === MAT.LEAF) {
+        if (rng() < 0.1) { set(nx, ny, MAT.FIRE); return; }
+      }
       // FIRE interactions
       if (mat === MAT.FIRE) {
         if (nmat === MAT.WATER) { set(x, y, MAT.STEAM, 150); return; }

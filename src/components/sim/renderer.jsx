@@ -6,71 +6,97 @@ function hex(c) {
 }
 
 const BASE_COLORS = {
-  [MAT.SAND]:        hex('#e8c97a'),
-  [MAT.LEAVES]:      hex('#4a7c3f'),
-  [MAT.OBSIDIAN]:    hex('#1a0a2e'),
-  [MAT.IRON]:        hex('#808080'),
-  [MAT.ALUMINUM]:    hex('#d4d4d4'),
-  [MAT.ASH]:         hex('#555555'),
-  [MAT.EMBER]:       hex('#ff6600'),
-  [MAT.STONE]:       hex('#888877'),
-  [MAT.WOOD]:        hex('#8b4513'),
-  [MAT.ICE]:         hex('#b0d8f0'),
-  [MAT.COPPER]:      hex('#b87333'),
-  [MAT.TNT]:         hex('#cc2200'),
-  [MAT.GLASS_SHARD]: hex('#c8e8f8'),
-  [MAT.FUMES]:       hex('#99aa22'),
-  [MAT.PLASTIC]:     hex('#ff69b4'),
-  [MAT.OIL]:         hex('#3d2b1f'),
-
-  [MAT.AIR]: [5,5,5],
-  [MAT.ALCOHOL]: [224,224,255],
-  [MAT.ALGAE]: [0,100,0],
-  [MAT.ALKALICE]: [173,216,230],
-  [MAT.ANTIMATTER]: [46,8,84],
-  [MAT.BLOOD]: [138,3,3],
-  [MAT.BONE]: [245,245,245],
-  [MAT.BRICK]: [178,34,34],
-  [MAT.BROMINE]: [163,42,42],
-  [MAT.CANCER]: [255,105,180],
-  [MAT.CARBON_DIOXIDE]: [127,140,141],
-  [MAT.CHLORINE]: [212,239,223],
-  [MAT.CLAY]: [160,82,45],
-  [MAT.CLF3]: [144,238,144],
-  [MAT.COLD_FIRE]: [0,255,255],
-  [MAT.CONCRETE]: [149,165,166],
-  [MAT.CONCRETE_POWDER]: [189,195,199],
-  [MAT.DIAMOND]: [224,255,255],
-  [MAT.DIRT]: [93,64,55],
-  [MAT.DRY_ICE]: [240,248,255],
-  [MAT.EARTH]: [62,39,35],
-  [MAT.FLOUR]: [245,245,220],
-  [MAT.GOLD]: [255,215,0],
-  [MAT.GRASS]: [46,204,113],
-  [MAT.HONEY]: [212,175,55],
-  [MAT.METHANE]: [241,196,15],
-  [MAT.MUD]: [107,68,35],
-  [MAT.NEUTRON]: [189,195,199],
-  [MAT.OXYGEN]: [224,255,255],
-  [MAT.PLANT]: [39,174,96],
-  [MAT.PLASMA]: [142,68,173],
-  [MAT.PROPANE]: [255,235,205],
-  [MAT.RAD_STEAM]: [191,255,0],
-  [MAT.ROCK]: [128,128,128],
-  [MAT.SALT]: [255,255,255],
-  [MAT.SALTWATER]: [52,152,219],
-  [MAT.SEED]: [211,84,0],
-  [MAT.SELTZER]: [208,240,255],
-  [MAT.SLAG]: [52,73,94],
-  [MAT.SNOW]: [240,248,255],
-  [MAT.STEEL]: [127,140,141],
-  [MAT.SUGAR]: [255,255,255],
-  [MAT.SUGAR_WATER]: [160,216,241],
-  [MAT.SULFUR]: [241,196,15],
-  [MAT.TREE_BRANCH]: [93,64,55],
-  [MAT.VIRUS]: [0,255,0],
-  [MAT.VOID]: [0,0,0],
-  [MAT.WAX]: [255,248,220],};
+  [MAT.SAND]: [232, 201, 122],
+  [MAT.LEAF]: [74, 124, 63],
+  [MAT.LEAVES]: [74, 124, 63],
+  [MAT.OBSIDIAN]: [26, 10, 46],
+  [MAT.IRON]: [128, 128, 128],
+  [MAT.ALUMINUM]: [212, 212, 212],
+  [MAT.ASH]: [85, 85, 85],
+  [MAT.STONE]: [136, 136, 119],
+  [MAT.WOOD]: [139, 69, 19],
+  [MAT.ICE]: [176, 216, 240],
+  [MAT.COPPER]: [184, 115, 51],
+  [MAT.TNT]: [204, 34, 0],
+  [MAT.GLASS_SHARD]: [200, 232, 248],
+  [MAT.FUMES]: [153, 170, 34],
+  [MAT.PLASTIC]: [255, 105, 180],
+  [MAT.OIL]: [61, 43, 31],
+  [MAT.AIR]: [5, 5, 5],
+  [MAT.ALCOHOL]: [224, 224, 255],
+  [MAT.ALGAE]: [0, 100, 0],
+  [MAT.ALKALICE]: [173, 216, 230],
+  [MAT.ANTIMATTER]: [46, 8, 84],
+  [MAT.BLOOD]: [138, 3, 3],
+  [MAT.BONE]: [245, 245, 245],
+  [MAT.BRICK]: [178, 34, 34],
+  [MAT.BROMINE]: [163, 42, 42],
+  [MAT.CANCER]: [255, 105, 180],
+  [MAT.CARBON_DIOXIDE]: [127, 140, 141],
+  [MAT.CHLORINE]: [212, 239, 223],
+  [MAT.CLAY]: [160, 82, 45],
+  [MAT.CLF3]: [144, 238, 144],
+  [MAT.COLD_FIRE]: [0, 255, 255],
+  [MAT.CONCRETE]: [149, 165, 166],
+  [MAT.CONCRETE_POWDER]: [189, 195, 199],
+  [MAT.DIAMOND]: [224, 255, 255],
+  [MAT.DIRT]: [93, 64, 55],
+  [MAT.DRY_ICE]: [240, 248, 255],
+  [MAT.EARTH]: [62, 39, 35],
+  [MAT.FLOUR]: [245, 245, 220],
+  [MAT.GOLD]: [255, 215, 0],
+  [MAT.GRASS]: [46, 204, 113],
+  [MAT.HONEY]: [212, 175, 55],
+  [MAT.METHANE]: [241, 196, 15],
+  [MAT.MUD]: [107, 68, 35],
+  [MAT.NEUTRON]: [189, 195, 199],
+  [MAT.OXYGEN]: [224, 255, 255],
+  [MAT.PLANT]: [39, 174, 96],
+  [MAT.PLASMA]: [142, 68, 173],
+  [MAT.PROPANE]: [255, 235, 205],
+  [MAT.RAD_STEAM]: [191, 255, 0],
+  [MAT.ROCK]: [128, 128, 128],
+  [MAT.SALT]: [255, 255, 255],
+  [MAT.SALTWATER]: [52, 152, 219],
+  [MAT.SEED]: [211, 84, 0],
+  [MAT.SELTZER]: [208, 240, 255],
+  [MAT.SLAG]: [52, 73, 94],
+  [MAT.SNOW]: [240, 248, 255],
+  [MAT.STEEL]: [127, 140, 141],
+  [MAT.SUGAR]: [255, 255, 255],
+  [MAT.SUGAR_WATER]: [160, 216, 241],
+  [MAT.SULFUR]: [241, 196, 15],
+  [MAT.TREE_BRANCH]: [93, 64, 55],
+  [MAT.VIRUS]: [0, 255, 0],
+  [MAT.VOID]: [0, 0, 0],
+  [MAT.WAX]: [255, 248, 220],
+  [MAT.CHARCOAL]: [51, 51, 51],
+  [MAT.DUST]: [187, 170, 153],
+  [MAT.ELECTRON]: [0, 255, 255],
+  [MAT.EXPLOSIVE]: [255, 68, 0],
+  [MAT.FENCE]: [139, 69, 19],
+  [MAT.FLUORINE]: [204, 255, 204],
+  [MAT.GAS]: [224, 224, 224],
+  [MAT.GLUE]: [240, 240, 240],
+  [MAT.GUNPOWDER]: [68, 68, 68],
+  [MAT.MAGMA]: [255, 51, 0],
+  [MAT.MEAT]: [255, 182, 193],
+  [MAT.MERCURY]: [176, 176, 176],
+  [MAT.METAL]: [160, 160, 160],
+  [MAT.MILK]: [255, 255, 255],
+  [MAT.MOLTEN_GLASS]: [255, 69, 0],
+  [MAT.MOLTEN_IRON]: [255, 102, 0],
+  [MAT.MUSHROOM]: [244, 164, 96],
+  [MAT.NITROGLYCERIN]: [241, 196, 15],
+  [MAT.POISON_GAS]: [128, 0, 128],
+  [MAT.PORCELAIN]: [253, 245, 230],
+  [MAT.POWDER_METAL]: [153, 153, 153],
+  [MAT.PROTON]: [255, 0, 0],
+  [MAT.SLIME]: [50, 205, 50],
+  [MAT.THERMITE]: [230, 126, 34],
+  [MAT.WALL]: [51, 51, 51],
+  [MAT.RUST]: [139, 69, 19],
+};
 
 export function render(ctx, engine, canvasW, canvasH) {
   const { grid, temp, charge, life, colorVar, width, height } = engine;
@@ -244,6 +270,162 @@ export function render(ctx, engine, canvasW, canvasH) {
         // Translucent rising bubble with shimmer
         const bShimmer = Math.sin(t * 6 + i * 0.4) * 15;
         r = 160 + (bShimmer | 0); g = 210 + (bShimmer * 0.5 | 0); b = 255; a = 90 + (Math.abs(bShimmer) | 0);
+        break;
+      }
+
+
+      case MAT.SAND:
+      case MAT.DIRT:
+      case MAT.DUST:
+      case MAT.POWDER_METAL:
+      case MAT.ASH:
+      case MAT.GUNPOWDER:
+      case MAT.SALT:
+      case MAT.SUGAR:
+      case MAT.FLOUR:
+      case MAT.CONCRETE_POWDER:
+      case MAT.THERMITE:
+      case MAT.RUST: {
+        const base = BASE_COLORS[mat];
+        const noise = (cv - 20) * 0.8;
+        r = base[0] + noise;
+        g = base[1] + noise;
+        b = base[2] + noise;
+        break;
+      }
+      case MAT.IRON:
+      case MAT.GOLD:
+      case MAT.COPPER:
+      case MAT.STEEL:
+      case MAT.ALUMINUM:
+      case MAT.METAL:
+      case MAT.LIQUID_METAL:
+      case MAT.MOLTEN_IRON: {
+        const base = BASE_COLORS[mat];
+        const shimmer = Math.sin(t * 3 + cv * 0.5) * 15;
+        r = base[0] + shimmer + (cv - 20) * 0.3;
+        g = base[1] + shimmer + (cv - 20) * 0.3;
+        b = base[2] + shimmer + (cv - 20) * 0.5;
+        break;
+      }
+      case MAT.WOOD:
+      case MAT.TREE_BRANCH:
+      case MAT.FENCE: {
+        const grain = Math.sin(i * 0.7) * 12;
+        r = 139 + grain + (cv - 20) * 0.4;
+        g = 69 + grain + (cv - 20) * 0.2;
+        b = 19 + grain;
+        break;
+      }
+      case MAT.STONE:
+      case MAT.ROCK:
+      case MAT.BRICK:
+      case MAT.CONCRETE:
+      case MAT.WALL:
+      case MAT.OBSIDIAN:
+      case MAT.PORCELAIN: {
+        const base = BASE_COLORS[mat] || [128, 128, 128];
+        const speckle = (i % 7 === 0) ? -20 : (i % 13 === 0) ? 15 : 0;
+        r = base[0] + speckle + (cv - 20) * 0.4;
+        g = base[1] + speckle + (cv - 20) * 0.4;
+        b = base[2] + speckle + (cv - 20) * 0.4;
+        break;
+      }
+      case MAT.GRASS:
+      case MAT.PLANT:
+      case MAT.LEAF:
+      case MAT.LEAVES:
+      case MAT.ALGAE:
+      case MAT.MUSHROOM: {
+        const sway = Math.sin(t + i * 0.03) * 10;
+        const base = BASE_COLORS[mat] || [39, 174, 96];
+        r = base[0] + sway;
+        g = base[1] + sway * 1.5 + (cv - 20) * 0.5;
+        b = base[2] + sway * 0.5;
+        break;
+      }
+      case MAT.WATER:
+      case MAT.SALTWATER:
+      case MAT.SUGAR_WATER:
+      case MAT.SELTZER: {
+        const w = Math.sin(t * 2 + i * 0.07) * 8;
+        const base = BASE_COLORS[mat] || [52, 152, 219];
+        r = base[0] + cv * 0.1; g = base[1] + w + cv * 0.2; b = base[2] + w * 0.5; a = 180;
+        break;
+      }
+
+      case MAT.IRON:
+      case MAT.GOLD:
+      case MAT.COPPER:
+      case MAT.STEEL:
+      case MAT.ALUMINUM:
+      case MAT.METAL: {
+        const base = BASE_COLORS[mat];
+        const shimmer = Math.sin(t * 3 + cv * 0.5) * 15;
+        r = base[0] + shimmer + (cv - 20) * 0.3;
+        g = base[1] + shimmer + (cv - 20) * 0.3;
+        b = base[2] + shimmer + (cv - 20) * 0.5;
+        break;
+      }
+      case MAT.WOOD:
+      case MAT.TREE_BRANCH:
+      case MAT.FENCE: {
+        const grain = Math.sin(i * 0.7) * 12;
+        r = 139 + grain + (cv - 20) * 0.4;
+        g = 69 + grain + (cv - 20) * 0.2;
+        b = 19 + grain;
+        break;
+      }
+      case MAT.STONE:
+      case MAT.ROCK:
+      case MAT.BRICK:
+      case MAT.CONCRETE:
+      case MAT.WALL: {
+        const base = BASE_COLORS[mat];
+        const speckle = (i % 7 === 0) ? -20 : (i % 13 === 0) ? 15 : 0;
+        r = base[0] + speckle + (cv - 20) * 0.4;
+        g = base[1] + speckle + (cv - 20) * 0.4;
+        b = base[2] + speckle + (cv - 20) * 0.4;
+        break;
+      }
+      case MAT.GRASS:
+      case MAT.PLANT:
+      case MAT.LEAF:
+      case MAT.LEAVES:
+      case MAT.ALGAE: {
+        const sway = Math.sin(t + i * 0.03) * 10;
+        const base = BASE_COLORS[mat];
+        r = base[0] + sway;
+        g = base[1] + sway * 1.5 + (cv - 20) * 0.5;
+        b = base[2] + sway * 0.5;
+        break;
+      }
+      case MAT.MERCURY: {
+        const shine = Math.sin(t * 4 + i * 0.1) * 25 + 200;
+        r = g = b = shine;
+        break;
+      }
+      case MAT.SLIME: {
+        const goo = Math.sin(t * 2 + i * 0.05) * 10;
+        r = 50 + goo; g = 205 + goo; b = 50 + goo; a = 210;
+        break;
+      }
+      case MAT.HONEY: {
+        r = 212 + (cv - 20) * 0.2; g = 175 + (cv - 20) * 0.3; b = 55; a = 230;
+        break;
+      }
+      case MAT.MILK: {
+        r = g = b = 255 - (cv % 10); a = 255;
+        break;
+      }
+      case MAT.BLOOD: {
+        const pulse = Math.sin(t * 1.5 + i * 0.02) * 5;
+        r = 138 + pulse; g = 3; b = 3; a = 230;
+        break;
+      }
+      case MAT.POISON_GAS: {
+        const drift = Math.sin(t + i * 0.1) * 20;
+        r = 128 + drift; g = 0; b = 128 + drift; a = 140;
         break;
       }
       default: {

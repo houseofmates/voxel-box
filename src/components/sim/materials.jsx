@@ -97,6 +97,22 @@ export const MAT = {
   ELECTRON: 92,
   MOLTEN_GLASS: 93,
   MOLTEN_IRON: 94,
+  AIR: 0,
+  OBSIDIAN: 95,
+  ALUMINUM: 96,
+  EMBER: 97,
+  FUMES: 98,
+  GLASS_SHARD: 100,
+  CORIUM: 101,
+  LIQUID_METAL: 102,
+  TOXIC_SMOKE: 103,
+  DEAD_HUMAN: 104,
+  BUBBLE: 105,
+  MELTED_PLASTIC: 106,
+  HUMAN: 107,
+  HUMAN_BODY: 108,
+  LEAVES: 25,
+  RUST: 109,
 };
 
 export const MATERIALS = {
@@ -165,7 +181,7 @@ export const MATERIALS = {
     sandbucketMovable: true,
     reactionProduct: {
       [MAT.FIRE]: MAT.STEAM,
-      [MAT.LAVA]: MAT.STONE
+      [MAT.LAVA]: MAT.OBSIDIAN
     }
   },
   [MAT.STONE]: {
@@ -1502,7 +1518,232 @@ Object.assign(MATERIALS, {
     sandbucketMovable: true,
     burnInto: MAT.ASH
   },
-  [MAT.BONE]: {
+
+  [MAT.OBSIDIAN]: {
+    name: 'obsidian',
+    color: '#1a0a2e',
+    state: 0, // solid
+    density: 2600,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 700,
+    boilPoint: 2000,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.ALUMINUM]: {
+    name: 'aluminum',
+    color: '#d4d4d4',
+    state: 0, // solid
+    density: 2700,
+    stain: 0,
+    thermalConductivity: 235,
+    electricalConductivity: 0.6,
+    flammable: false,
+    meltPoint: 660,
+    boilPoint: 2470,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.EMBER]: {
+    name: 'ember',
+    color: '#ff6600',
+    state: 3, // powder-like
+    density: 500,
+    stain: 0.2,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 99999,
+    baseTemp: 800,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.FUMES]: {
+    name: 'fumes',
+    color: '#99aa22',
+    state: 2, // gas
+    density: 1.5,
+    stain: 0.5,
+    thermalConductivity: 0.05,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: -200,
+    boilPoint: -50,
+    ignitePoint: 400,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.GLASS_SHARD]: {
+    name: 'glass_shard',
+    color: '#c8e8f8',
+    state: 3, // powder-like
+    density: 2500,
+    stain: 0,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1200,
+    boilPoint: 2000,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.CORIUM]: {
+    name: 'corium',
+    color: '#ffff00',
+    state: 1, // liquid
+    density: 10000,
+    stain: 0.8,
+    thermalConductivity: 10.0,
+    electricalConductivity: 0.1,
+    flammable: false,
+    meltPoint: 2500,
+    boilPoint: 3500,
+    ignitePoint: 99999,
+    baseTemp: 2800,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.LIQUID_METAL]: {
+    name: 'liquid_metal',
+    color: '#b0b0b0',
+    state: 1, // liquid
+    density: 7000,
+    stain: 0.2,
+    thermalConductivity: 40,
+    electricalConductivity: 0.8,
+    flammable: false,
+    meltPoint: 500,
+    boilPoint: 2000,
+    ignitePoint: 99999,
+    baseTemp: 800,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.TOXIC_SMOKE]: {
+    name: 'toxic_smoke',
+    color: '#556b2f',
+    state: 2, // gas
+    density: 1.2,
+    stain: 0.3,
+    thermalConductivity: 0.05,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: -200,
+    boilPoint: -100,
+    ignitePoint: 99999,
+    baseTemp: 60,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.DEAD_HUMAN]: {
+    name: 'dead_human',
+    color: '#a0a0a0',
+    state: 3, // powder-like (ragdoll)
+    density: 1050,
+    stain: 0.2,
+    thermalConductivity: 0.4,
+    electricalConductivity: 0.1,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 20,
+    explosionResistant: false,
+    sandbucketMovable: true
+  },
+  [MAT.BUBBLE]: {
+    name: 'bubble',
+    color: '#ffffff',
+    state: 2, // gas
+    density: 0.1,
+    stain: 0,
+    thermalConductivity: 0.01,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: -273,
+    boilPoint: -273,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: false
+  },
+  [MAT.MELTED_PLASTIC]: {
+    name: 'melted_plastic',
+    color: '#ffb6c1',
+    state: 1, // liquid
+    density: 900,
+    stain: 0.2,
+    thermalConductivity: 0.1,
+    electricalConductivity: 0,
+    flammable: true,
+    meltPoint: 50,
+    boilPoint: 300,
+    ignitePoint: 400,
+    baseTemp: 200,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.HUMAN]: {
+    name: 'human',
+    color: '#f5deb3',
+    state: 0, // special handling
+    density: 1000,
+    stain: 0.1,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.1,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 37,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+  [MAT.HUMAN_BODY]: {
+    name: 'human_body',
+    color: '#f5deb3',
+    state: 0, // special
+    density: 1000,
+    stain: 0,
+    thermalConductivity: 0.5,
+    electricalConductivity: 0.1,
+    flammable: true,
+    meltPoint: 99999,
+    boilPoint: 99999,
+    ignitePoint: 200,
+    baseTemp: 37,
+    explosionResistant: false,
+    sandbucketMovable: false
+  },
+
+  [MAT.RUST]: {
+    name: 'rust',
+    color: '#8b4513',
+    state: 3, // powder
+    density: 5000,
+    stain: 0.1,
+    thermalConductivity: 0.2,
+    electricalConductivity: 0,
+    flammable: false,
+    meltPoint: 1500,
+    boilPoint: 3000,
+    ignitePoint: 99999,
+    baseTemp: 20,
+    explosionResistant: true,
+    sandbucketMovable: true
+  },  [MAT.BONE]: {
     name: 'bone',
     color: '#f5f5f5',
     state: 0, // solid
