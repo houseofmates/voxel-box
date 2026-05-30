@@ -587,7 +587,7 @@ export function createEngine(width, height) {
 
       // WATER extinguishing FIRE
       if (mat === MAT.WATER && nmat === MAT.FIRE) {
-        if (rng() < 0.2) { set(nx, ny, MAT.STEAM, 100); grid[i] = MAT.EMPTY; temp[i] = 20; return; }
+        if (rng() < 0.2) { set(nx, ny, MAT.STEAM, 100); grid[i] = MAT.EMPTY; return; }
       }
 
       // PLANT Growth

@@ -165,7 +165,7 @@ export const MATERIALS = {
     sandbucketMovable: true,
     reactionProduct: {
       [MAT.FIRE]: MAT.STEAM,
-      [MAT.LAVA]: MAT.STONE
+      [MAT.LAVA]: MAT.OBSIDIAN
     }
   },
   [MAT.STONE]: {

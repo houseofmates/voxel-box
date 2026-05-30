@@ -6,7 +6,7 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   logLevel: 'error', // Suppress warnings, only show errors
   server: {
-    allowedHosts: ['voxel-box.houseofmates.space'],
+    allowedHosts: ['voxel-boxel-box.houseofmates.space', 'voxel-box.houseofmates.space'],
   },
   plugins: [
     base44({
