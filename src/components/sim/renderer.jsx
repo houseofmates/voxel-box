@@ -344,62 +344,6 @@ export function render(ctx, engine, canvasW, canvasH) {
         b = base[2] + sway * 0.5;
         break;
       }
-      case MAT.WATER:
-      case MAT.SALTWATER:
-      case MAT.SUGAR_WATER:
-      case MAT.SELTZER: {
-        const w = Math.sin(t * 2 + i * 0.07) * 8;
-        const base = BASE_COLORS[mat] || [52, 152, 219];
-        r = base[0] + cv * 0.1; g = base[1] + w + cv * 0.2; b = base[2] + w * 0.5; a = 180;
-        break;
-      }
-
-      case MAT.IRON:
-      case MAT.GOLD:
-      case MAT.COPPER:
-      case MAT.STEEL:
-      case MAT.ALUMINUM:
-      case MAT.METAL: {
-        const base = BASE_COLORS[mat];
-        const shimmer = Math.sin(t * 3 + cv * 0.5) * 15;
-        r = base[0] + shimmer + (cv - 20) * 0.3;
-        g = base[1] + shimmer + (cv - 20) * 0.3;
-        b = base[2] + shimmer + (cv - 20) * 0.5;
-        break;
-      }
-      case MAT.WOOD:
-      case MAT.TREE_BRANCH:
-      case MAT.FENCE: {
-        const grain = Math.sin(i * 0.7) * 12;
-        r = 139 + grain + (cv - 20) * 0.4;
-        g = 69 + grain + (cv - 20) * 0.2;
-        b = 19 + grain;
-        break;
-      }
-      case MAT.STONE:
-      case MAT.ROCK:
-      case MAT.BRICK:
-      case MAT.CONCRETE:
-      case MAT.WALL: {
-        const base = BASE_COLORS[mat];
-        const speckle = (i % 7 === 0) ? -20 : (i % 13 === 0) ? 15 : 0;
-        r = base[0] + speckle + (cv - 20) * 0.4;
-        g = base[1] + speckle + (cv - 20) * 0.4;
-        b = base[2] + speckle + (cv - 20) * 0.4;
-        break;
-      }
-      case MAT.GRASS:
-      case MAT.PLANT:
-      case MAT.LEAF:
-      case MAT.LEAVES:
-      case MAT.ALGAE: {
-        const sway = Math.sin(t + i * 0.03) * 10;
-        const base = BASE_COLORS[mat];
-        r = base[0] + sway;
-        g = base[1] + sway * 1.5 + (cv - 20) * 0.5;
-        b = base[2] + sway * 0.5;
-        break;
-      }
       case MAT.MERCURY: {
         const shine = Math.sin(t * 4 + i * 0.1) * 25 + 200;
         r = g = b = shine;

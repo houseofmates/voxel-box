@@ -56,7 +56,7 @@ export default function MaterialSidebar({ selected, onSelect }) {
           placeholder="search materials..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="w-full h-10 text-xs px-3 focus-visible:ring-0 border-none bg-transparent"
+          className="w-full h-10 text-xs px-3 focus-visible:ring-2 focus-visible:ring-indigo-500 border-none bg-transparent"
         />
       </div>
 
